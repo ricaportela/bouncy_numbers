@@ -1,4 +1,4 @@
-from bouncy_numbers import number_is_increase, number_is_decrease, number_is_bouncy
+from bouncy_numbers import number_is_increase, number_is_decrease, number_is_bouncy, bouncy_number
 
 
 def test_check_number_is_increase():
@@ -23,9 +23,9 @@ def test_check_number_not_is_decrease():
 def test_check_number_is_bouncy():
     assert number_is_bouncy(155349)
 
-
-"""In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
-   Find the least number for which the proportion of bouncy numbers is exactly 99%.
-"""
 def test_frequency():
-    assert number_is_bouncy(0.5) == 538
+    """In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+        Find the least number for which the proportion of bouncy numbers is exactly 99%.
+    """
+    assert bouncy_number(0.5) == 538
+    assert bouncy_number(0.9) == 21780

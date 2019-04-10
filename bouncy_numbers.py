@@ -29,7 +29,7 @@ def number_is_decrease(number: int) -> bool:
 def number_is_bouncy(number: int) -> bool:
     return (not number_is_increase(number)) and (not number_is_decrease(number))
 
-def bouncy_number(freq: float ) -> int:
+def bouncy_number(freq: float) -> int:
     bouncy_qty = 0
     for i in count(100):
         if number_is_bouncy(i):
