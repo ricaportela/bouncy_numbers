@@ -1,5 +1,4 @@
-from itertools import count
-"""This is the problem:
+""" This is the problem:
 
 Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
 Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
@@ -12,6 +11,9 @@ Surprisingly, bouncy numbers become more and more common and by the time we reac
 Find the least number for which the proportion of bouncy numbers is exactly 99%.
 
 """
+from itertools import count
+
+
 def number_is_increase(number: int) -> bool:
     num_str = str(number)
     previous = 0
@@ -22,19 +24,22 @@ def number_is_increase(number: int) -> bool:
         previous = c
     return True
 
+
 def number_is_decrease(number: int) -> bool:
     num_str = ''.join(reversed(str(number)))
     return number_is_increase(int(num_str))
 
+
 def number_is_bouncy(number: int) -> bool:
     return (not number_is_increase(number)) and (not number_is_decrease(number))
+
 
 def bouncy_number(freq: float) -> int:
     bouncy_qty = 0
     for i in count(100):
         if number_is_bouncy(i):
             bouncy_qty += 1
-            freq_calculated = bouncy_qty / 1
+            freq_calculated = bouncy_qty / i
             if freq_calculated >= freq:
                 return i
 
