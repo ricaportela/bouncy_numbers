@@ -33,4 +33,6 @@ def test_frequency():
         Find the least number for which the proportion of bouncy numbers is exactly 99%.
     """
     assert bouncy_numbers.bouncy_number(0.5) == 538
-    
+    assert bouncy_numbers.bouncy_number(0.9) == 21780
+    assert bouncy_numbers.bouncy_number(0.99) == 1587000
+
